@@ -11,6 +11,8 @@
 		$transicoes 	= explode(',',$_POST["transicoes"]);
 		$estado_inicial = $_POST["estado_inicial"];
 		$estado_final 	= $_POST["estado_final"];
+		$palavra 		= $_POST["palavra"];
+
 			
 		$M = [$alfabeto,$estados,$transicoes,$estado_inicial,$estado_final];
 		}
@@ -28,34 +30,54 @@
 				?>	
 				</tr>
                 <?php	
+				
+					function gera($palavra,$transicoes,$estado_inicial){
+						
+						$atual = $estado_inicial;
+						$lista = $estado_inicial.'--';
+						for($i = 0; $i< count($palavra);$i++){
+							foreach($transicoes as $t){
+								$t = explode(':',$t);
+								if($t[1] == $palavra[$i] and $t[0] == $atual){
+									$atual = $t[2];
+									$lista .= $palavra[$i]."--".$atual;
+								}
+							}
+						}
+						
+						return $lista;
+					}
+					
+					
+					var_dump(gera($palavra,$transicoes,$estado_inicial));
+					
 					function transicao($atual,$alfabeto,$transicoes){
 						$destino = '';
 						foreach($transicoes as $t){
 								$t = explode(':',$t);
 								foreach($alfabeto as $char){
-									if($t[1] === $char && $t[0] === $atual){
+									if($t[1] == $char and $t[0] == $atual){
 										$destino .= '<td>'.$t[2].'</td>';							
 									}
 								}
 						}
 						return $destino;
-
 					}
-							
+
 					foreach($estados as $estado){
-						var_dump(transicao($estado,$alfabeto,$transicoes));
-						if($estado === $estado_inicial){
-							echo '<tr><th>→' . $estado.'</th>'.transicao($estado,$alfabeto,$transicoes).'</tr><br>';
+						
+						$trans = transicao($estado,$alfabeto,$transicoes);
+
+						if($estado == $estado_inicial){
+							echo '<tr><th>→' . $estado.'</th>'.$trans.'</tr><br>';
 						}
-						elseif($estado === $estado_final){
-							echo '<tr><th>*' . $estado .'</th>'.transicao($estado,$alfabeto,$transicoes).'</tr><br>';
+						elseif($estado == $estado_final){
+							echo '<tr><th>*' . $estado .'</th>'.$trans.'</tr><br>';
 						}
 						else{
-							echo '<tr><th>' . $estado .'</th>'.transicao($estado,$alfabeto,$transicoes).'</tr><br>';
+							echo '<tr><th>' . $estado .'</th>'.$trans.'</tr><br>';
 						}
 					}
-					
-					
 					
 				?>
 				

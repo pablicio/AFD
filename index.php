@@ -28,12 +28,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xs-3 col-sm-2">
-			<div class="form-group">
-				<label>Transições</label>
-				<input type="text" class="form-control"  name="transicoes" placeholder="Transições">
-			</div>
-		</div>
+		
 		
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
@@ -49,6 +44,23 @@
 			</div>
 		</div>
 		
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-9 col-sm-6">
+			<div class="form-group">
+				<label>Transições</label>
+				<input type="text" class="form-control"  name="transicoes" placeholder="Transições">
+			</div>
+		</div>
+		
+		<div class="col-xs-3 col-sm-2">
+			<div class="form-group">
+				<label>Palavra</label>
+				<input type="text" class="form-control"  name="palavra" placeholder="Palavra">
+			</div>
+		</div>
+
 	</div>
 	  <button type="submit" class="btn btn-info">Criar</button>
 	</form>
