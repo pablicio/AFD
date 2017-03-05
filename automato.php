@@ -30,26 +30,27 @@
 				?>	
 				</tr>
                 <?php	
-				
-					function gera($palavra,$transicoes,$estado_inicial){
-						
+					function gera($palavra,$transicoes,$estado_inicial,$estado_final){
 						$atual = $estado_inicial;
-						$lista = $estado_inicial.'--';
-						for($i = 0; $i< count($palavra);$i++){
+						$lista = $estado_inicial;
+						for($i = 0; $i< strlen($palavra);$i++){
 							foreach($transicoes as $t){
 								$t = explode(':',$t);
-								if($t[1] == $palavra[$i] and $t[0] == $atual){
+								if($t[0] == $atual && $t[1] == $palavra[$i]){
 									$atual = $t[2];
-									$lista .= $palavra[$i]."--".$atual;
+									$lista .= "-->".$palavra[$i]."-->".$atual;
+									break;
 								}
 							}
 						}
-						
-						return $lista;
+						if($atual == $estado_final)
+							return $lista." Cadeia reconhecida";
+						else
+							return $lista." Cadeia não reconhecida";
+
 					}
 					
-					
-					var_dump(gera($palavra,$transicoes,$estado_inicial));
+					var_dump(gera($palavra,$transicoes,$estado_inicial,$estado_final));
 					
 					function transicao($atual,$alfabeto,$transicoes){
 						$destino = '';
@@ -80,11 +81,20 @@
 					}
 					
 				?>
-				
-	
-
-				
 	</table>
+	<form action="automato.php" method="post">
+	
+		<div class="row">
+			<div class="col-xs-3 col-sm-2">
+				<div class="form-group">
+					<label>Palavra</label>
+					<input type="text" class="form-control"  name="palavra" placeholder="Palavra">
+				</div>
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-info">Criar</button>
+	</form>
 	
 	<?php } ?>
 
