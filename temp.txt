@@ -1,8 +1,8 @@
 $alfabeto = a,b
 
-$estados = q0,q1,q2,q3
+$estados = q0,q1,q2
 
-$transicoes = q0:a:q0,q0:b:q1,q0:c:q1,q0:d:q0,q1:a:q0,q1:b:q1,q1:c:q0,q1:d:q1
+$transicoes = q0:a:q0,q0:b:q1,q1:a:q1,q1:b:q2,q2:a:q2,q2:b:q2
 
 $estado_inicial = q0
 
