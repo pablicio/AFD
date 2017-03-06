@@ -129,21 +129,8 @@
 					
 				?>
 	</table>
-<!-- 	<form action="automato.php" method="post">
-	
-		<div class="row">
-			<div class="col-xs-3 col-sm-2">
-				<div class="form-group">
-					<label>Palavra</label>
-					<input type="text" class="form-control"  name="palavra" placeholder="Palavra">
-				</div>
-			</div>
-		</div>
-		
-		<button type="submit" class="btn btn-info">Criar</button>
-	</form> -->
 
-	<input type="button" id="btnAdd" name="1" value="Adicionar palavra">
+	<input class="btn btn-success" type="button" id="btnAdd" name="1" value="Adicionar palavra">
 	
 	<input type="hidden" id="valor" name="valor" value="0">
 
@@ -152,7 +139,7 @@
 		<input type="hidden" id="contador" name="contador" value="0">
 
 		<p id="palavras">Palavras: </p>
-		<button type="submit" class="btn btn-info">Criar</button>
+		<button type="submit" class="btn btn-info">Gerar</button>
 	</form>
 
 	

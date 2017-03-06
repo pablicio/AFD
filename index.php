@@ -19,13 +19,13 @@
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Alfabeto</label>
-				<input type="text" class="form-control" name="alfabeto" placeholder="Alfabeto" value="a,b">
+				<input type="text" class="form-control" name="alfabeto" placeholder="Ex: a,b">
 			 </div>
 		</div>
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estados</label>
-				<input type="text" class="form-control"  name="estados" placeholder="Estados" value="q0,q1,q2">
+				<input type="text" class="form-control"  name="estados" placeholder="Ex: q0,q1,q2">
 			</div>
 		</div>
 		
@@ -34,14 +34,14 @@
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estado Inicial</label>
-				<input type="text" class="form-control"  name="estado_inicial" placeholder="Estado Inicial" value="q0">
+				<input type="text" class="form-control"  name="estado_inicial" placeholder="Ex: q0">
 			 </div>
 		</div>
 		
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estado Final</label>
-				<input type="text" class="form-control"  name="estado_final" placeholder="Estado Final" value="q2">
+				<input type="text" class="form-control"  name="estado_final" placeholder="Ex: q2">
 			</div>
 		</div>
 		
@@ -51,17 +51,10 @@
 		<div class="col-xs-9 col-sm-6">
 			<div class="form-group">
 				<label>Transições</label>
-				<input type="text" class="form-control"  name="transicoes" placeholder="Transições" value="q0:a:q0,q0:b:q1,q1:a:q1,q1:b:q2,q2:a:q2,q2:b:q2">
+				<input type="text" class="form-control"  name="transicoes" placeholder="Ex: q0:a:q0,q0:b:q1,q1:a:q1,q1:b:q2,q2:a:q2,q2:b:q2">
 			</div>
 		</div>
 		
-		<!-- <div class="col-xs-3 col-sm-2">
-			<div class="form-group">
-				<label>Palavra</label>
-				<input type="text" class="form-control"  name="palavra" placeholder="Palavra" value="a,a,b,b">
-			</div>
-		</div> -->
-
 	</div>
 	  <button type="submit" class="btn btn-info">Criar</button>
 	</form>
