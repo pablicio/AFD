@@ -86,15 +86,15 @@
 							}
 						}
 						if($atual == $estado_final)
-							return $lista." Cadeia reconhecida";
+							return $lista." => Cadeia reconhecida!";
 						else
-							return $lista." Cadeia não reconhecida";
+							return $lista." => Cadeia não reconhecida!";
 
 					}
 					
 					if (isset($_POST['form_palavras'])) {
 						foreach ($palavras as $palavra) {
-							var_dump(gera($palavra,$transicoes,$estado_inicial,$estado_final));
+							echo '<h1>   ==>  '.gera($palavra,$transicoes,$estado_inicial,$estado_final).'</h1><br>';
 						}
 						
 					}
@@ -139,7 +139,8 @@
 		<input type="hidden" id="contador" name="contador" value="0">
 
 		<p id="palavras">Palavras: </p>
-		<button type="submit" class="btn btn-info">Gerar</button>
+		<button type="submit" class="btn btn-info">Reconhecer Palavra</button><br><br><br><br><br>
+		<a class="btn btn-warning" href="index.php">Novo Autômato</a>
 	</form>
 
 	
@@ -166,10 +167,6 @@
 		  element.type = "text";
 		  element.value = " "; // Really? You want the default value to be the type string?
 		  element.name = "palavra_"+i; // And the name too?
-
-		  // element.onclick = function() { // Note this is a function
-		  //   alert("blabla");
-		  // };
 
 		  var palavras = document.getElementById("palavras");
 		  //Append the element in page (in span).  
