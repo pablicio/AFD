@@ -94,7 +94,7 @@
 					
 					if (isset($_POST['form_palavras'])) {
 						foreach ($palavras as $palavra) {
-							echo '<h1>   ==>  '.gera($palavra,$transicoes,$estado_inicial,$estado_final).'</h1><br>';
+							echo  '<h1>'.$palavra.' ==>  '.gera($palavra,$transicoes,$estado_inicial,$estado_final).'</h1><br>';
 						}
 						
 					}
