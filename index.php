@@ -12,19 +12,20 @@
 
   </head>
   <body>
-    <form action="index.php" method="post">
+    <form id="form_automato" action="index.php" method="post">
+    <input type="hidden" name="form_automato" value="1">
 	
 	<div class="row">
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Alfabeto</label>
-				<input type="text" class="form-control" name="alfabeto" placeholder="Alfabeto">
+				<input type="text" class="form-control" name="alfabeto" placeholder="Alfabeto" value="a,b">
 			 </div>
 		</div>
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estados</label>
-				<input type="text" class="form-control"  name="estados" placeholder="Estados">
+				<input type="text" class="form-control"  name="estados" placeholder="Estados" value="q0,q1,q2">
 			</div>
 		</div>
 		
@@ -33,14 +34,14 @@
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estado Inicial</label>
-				<input type="text" class="form-control"  name="estado_inicial" placeholder="Estado Inicial">
+				<input type="text" class="form-control"  name="estado_inicial" placeholder="Estado Inicial" value="q0">
 			 </div>
 		</div>
 		
 		<div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Estado Final</label>
-				<input type="text" class="form-control"  name="estado_final" placeholder="Estado Final">
+				<input type="text" class="form-control"  name="estado_final" placeholder="Estado Final" value="q2">
 			</div>
 		</div>
 		
@@ -50,16 +51,16 @@
 		<div class="col-xs-9 col-sm-6">
 			<div class="form-group">
 				<label>Transições</label>
-				<input type="text" class="form-control"  name="transicoes" placeholder="Transições">
+				<input type="text" class="form-control"  name="transicoes" placeholder="Transições" value="q0:a:q0,q0:b:q1,q1:a:q1,q1:b:q2,q2:a:q2,q2:b:q2">
 			</div>
 		</div>
 		
-		<div class="col-xs-3 col-sm-2">
+		<!-- <div class="col-xs-3 col-sm-2">
 			<div class="form-group">
 				<label>Palavra</label>
-				<input type="text" class="form-control"  name="palavra" placeholder="Palavra">
+				<input type="text" class="form-control"  name="palavra" placeholder="Palavra" value="a,a,b,b">
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 	  <button type="submit" class="btn btn-info">Criar</button>
